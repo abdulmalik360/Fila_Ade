@@ -1,0 +1,416 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/* =====================================
+   ABOUT IMAGE
+===================================== */
+body {
+	perspective: 800px;
+}
+
+.section-wrap{
+    margin-top: 50px;
+}
+
+.wrap {
+	transition: -webkit-transform 1s ease-in;
+	transform-style: preserve-3d;
+}
+
+.wrap div {
+	position: absolute;
+	backface-visibility: hidden;
+}
+
+.side-a {
+	z-index: 100;
+}
+
+.side-b {
+	transform: rotateY(-180deg);
+}
+
+.wrap:hover {
+	transform: rotateY(-180deg);
+}
+
+
+
+
+/* body {
+	padding-top: 50px;
+	background: #F7F7F7;
+} */
+.wrap {
+	position: relative;
+	margin: 0 auto;
+	width: 250px;
+	height: 350px;
+	cursor: pointer;
+}
+.wrap div {
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	box-shadow: inset 0 0 45px rgba(255,255,255,.3), 0 12px 20px -10px rgba(0,0,0,.4);
+	color: #FFF;
+	text-align: center;
+	text-shadow: 0 1px rgba(0,0,0,.3);
+	font: bold 3em sans-serif;
+	line-height: 350px;
+}
+.side-a {
+	background: #498FBC url('assets/about-1.jpg');
+}
+.side-b {
+	background: #33363B url('assets/about-2.jpg');
+}
+.click {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: #999;
+    margin-top: 20px;
+}
+
+/* =====================================
+   ABOUT INFORMATION
+=====================================*/
+.about_us {
+    margin-top: 50px;
+}
+.about-info-box {
+    margin: -1px 20px 20px;
+
+    padding: 18px;
+
+    background: #101a1d;
+
+    border-radius: 18px;
+
+    position: relative;
+}
+
+.about-info-box h4 {
+    font-size: 27px;
+    color: #19c957;
+    line-height: 1.25;
+    font-family: "Roboto", sans-serif;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.about-info-box-p {
+    font-size: 16px;
+    color: #c6c7c2;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    font-weight: 0;
+}
+
+/* =====================================
+   PRODUCT INFORMATION
+===================================== */
+
+.product-info-box {
+    margin: -1px 20px 20px;
+
+    padding: 18px;
+
+    background: #101a1d;
+
+    border-radius: 0 0 18px 18px;
+
+    position: relative;
+}
+
+
+/* Location */
+
+.location {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: #aab3b6;
+
+    font-size: 14px;
+
+    margin-bottom: 22px;
+}
+
+.location i {
+    color: #aab3b6;
+}
+/* Product title */
+
+.product-info-box h2 {
+    font-size: 27px;
+    color: #19bf56;
+    line-height: 1.25;
+
+    margin-bottom: 20px;
+
+    font-weight: 600;
+}
+.product-info-box h1 {
+    color: white;
+}
+.about-info-box p {
+    font-size: 16px;
+    color: #c6c7c2;
+    line-height: 1.25;
+
+    margin-bottom: 20px;
+
+    font-weight: 600;
+}
+
+
+/* Price */
+
+.product-price {
+    color: #aab3b6;
+
+    font-size: 20px;
+
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+
+/* =====================================
+   CONTACT BUTTONS
+===================================== */
+
+.contact-buttons {
+    display: flex;
+
+    gap: 20px;
+}
+
+.contact-buttons button {
+    height: 65px;
+
+    border-radius: 17px;
+
+    font-size: 21px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+
+/* Callback */
+
+.callback-btn {
+    flex: 1;
+
+    background: transparent;
+
+    border: 3px solid #19bd56;
+
+    color: #19c957;
+}
+
+
+/* Call */
+
+.call-btn {
+    flex: 1;
+
+    border: none;
+
+    background: #19bf56;
+
+    color: white;
+}
+
+.call-btn i {
+    margin-right: 10px;
+}
+
+
+/* =====================================
+   CHAT
+===================================== */
+
+.seller-chat {
+    background: #101a1d;
+
+    margin: 0 20px 30px;
+    padding: 20px;
+
+    border-radius: 18px;
+}
+
+.seller-chat h2 {
+    font-size: 25px;
+    color: white;
+    margin-bottom: 25px;
+}
+
+
+/* Quick message buttons */
+
+.quick-messages {
+    display: flex;
+
+    gap: 18px;
+
+    overflow-x: auto;
+
+    padding-bottom: 18px;
+}
+
+.quick-messages::-webkit-scrollbar {
+    display: none;
+}
+
+.quick-messages button {
+    flex-shrink: 0;
+
+    padding: 11px 18px;
+
+    background: transparent;
+
+    border: 2px solid #20bd59;
+
+    border-radius: 15px;
+
+    color: #20c85a;
+
+    font-size: 19px;
+
+    cursor: pointer;
+}
+
+
+/* Message box */
+
+.seller-chat textarea {
+    width: 100%;
+
+    height: 115px;
+
+    resize: none;
+
+    outline: none;
+
+    border: 2px solid #35434a;
+
+    border-radius: 17px;
+
+    background: #111b1e;
+
+    color: white;
+
+    padding: 22px;
+
+    font-size: 19px;
+
+    font-family: inherit;
+}
+
+.seller-chat textarea::placeholder {
+    color: #a1aaad;
+}
+
+
+/* Start chat */
+
+.start-chat {
+    width: 100%;
+
+    height: 65px;
+
+    margin-top: 20px;
+
+    border: none;
+
+    border-radius: 17px;
+
+    background: #ff9d2e;
+
+    color: #101010;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 500px) {
+
+    .details-header {
+        height: 108px;
+        padding: 0 20px;
+    }
+
+    .details-back {
+        font-size: 30px;
+        margin-right: 35px;
+    }
+
+    .details-header h2 {
+        font-size: 25px;
+    }
+
+    .header-right {
+        gap: 15px;
+    }
+
+    .header-right button {
+        font-size: 27px;
+    }
+
+    .details-image {
+        height: 665px;
+    }
+
+    .product-info-box {
+        margin: -1px 19px 20px;
+        padding: 18px;
+    }
+
+    .product-info-box h2 {
+        font-size: 30px;
+    }
+
+    .product-price {
+        font-size: 16px;
+    }
+
+    .contact-buttons {
+        gap: 15px;
+    }
+
+    .contact-buttons button {
+        height: 62px;
+        font-size: 17px;
+    }
+
+    .seller-chat {
+        margin: 0 19px 25px;
+    }
+}

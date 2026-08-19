@@ -1,0 +1,375 @@
+/* =========================
+   PRODUCT CARD
+========================= */
+
+.product-card {
+    width: 100%;
+    max-width: 450px;
+
+    margin: 25px auto;
+    padding: 15px;
+
+    background: #101a1d;
+
+    text-align: center;
+
+    box-sizing: border-box;
+}
+
+
+/* Product image */
+
+.product-image {
+    width: 100%;
+    height: 300px;
+
+    object-fit: contain;
+
+    display: block;
+
+    background: #f1f3f4;
+
+    margin-bottom: 25px;
+}
+
+
+/* Product name */
+
+.product-card h2 {
+    margin: 0 0 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #c6c7c2;
+    text-align: center;
+}
+
+
+/* Buy button */
+
+.buy-btn {
+    display: block;
+    margin: 0 auto 15px;
+    width: 210px;
+    height: 35px;
+    background: transparent;
+    box-shadow: 10px rgba(235, 232, 232, 0.2);
+    border: 2px solid #20c85a;
+    color: #c6c7c2;
+    /* border-radius: 2rem; */
+    font-size: 20px;
+    cursor: pointer;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+
+.buy-btn:hover {
+    background: #20c85a;
+    color: #000;
+    border: 2px solid #20c85a;
+}
+
+
+.buy-btn:active {
+    transform: scale(0.96);
+}
+
+
+/* Product price */
+
+.product-price {
+    margin: 0 0 30px;
+
+    color: #20c85a;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    text-align: center;
+}
+
+
+/* Mobile */
+
+@media (max-width: 500px) {
+
+    .product-card {
+        max-width: 100%;
+
+        padding: 10px;
+    }
+
+    .product-image {
+        height: 350px;
+    }
+
+    .product-card h2 {
+        font-size: 26px;
+    }
+
+    .buy-btn {
+        width: 190px;
+        height: 60px;
+
+        font-size: 23px;
+    }
+
+    .product-price {
+        font-size: 20px;
+    }
+}
+
+/* =========================
+   PURCHASE CONFIRMATION
+========================= */
+
+.purchase-overlay {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.7);
+
+    z-index: 99999;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+
+/* Confirmation box */
+
+.purchase-box {
+    width: 100%;
+    max-width: 420px;
+
+    background: #000;
+
+    border-radius: 18px;
+    border: 1px solid #c6c7c2;
+    padding: 25px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+
+    animation: popup .2s ease;
+}
+
+
+@keyframes popup {
+
+    from {
+        transform: scale(.85);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+
+.purchase-box h2 {
+    margin: 0 0 12px;
+
+    color: #fff;
+
+    font-size: 24px;
+}
+
+
+#confirmationText {
+    color: #eee;
+
+    font-size: 16px;
+
+    margin-bottom: 20px;
+}
+
+
+/* Selected product */
+
+.selected-product {
+    display: flex;
+
+    align-items: center;
+
+    text-align: left;
+
+    gap: 15px;
+
+    background: #202020;
+
+    border-radius: 12px;
+
+    padding: 12px;
+
+    margin-bottom: 25px;
+}
+
+
+.selected-product img {
+    width: 75px;
+    height: 75px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+
+
+.selected-product h3 {
+    margin: 0 0 7px;
+
+    color: #eee;
+
+    font-size: 17px;
+}
+
+
+.selected-product p {
+    margin: 0;
+
+    color: #20c85a;
+
+    font-weight: bold;
+
+    font-size: 16px;
+}
+
+
+/* Buttons */
+
+.confirmation-buttons {
+    display: flex;
+
+    gap: 12px;
+}
+
+
+.confirmation-buttons button {
+    flex: 1;
+
+    height: 52px;
+
+    border-radius: 10px;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.back-button {
+    background: #c6c7c2;
+
+    border: 2px solid #555;
+
+    color: #000;
+}
+
+
+.continue-button {
+    background: #20c85a;
+
+    border: 2px solid #20c85a;
+
+    color: black;
+}
+
+
+.back-button:active,
+.continue-button:active {
+    transform: scale(.97);
+}
+
+/* =========================
+   PRODUCT GRID
+========================= */
+
+.products-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   MOBILE
+   1 PRODUCT
+========================= */
+
+@media (max-width: 499px) {
+
+    .products-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+}
+
+
+/* =========================
+   SMALL TABLET
+   2 PRODUCTS
+========================= */
+
+@media (min-width: 550px) and (max-width: 749px) {
+
+    .products-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+}
+
+
+/* =========================
+   LARGE TABLET
+   3 PRODUCTS
+========================= */
+
+@media (min-width: 750px) and (max-width: 999px) {
+
+    .products-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+}
+
+
+/* =========================
+   DESKTOP
+   4 PRODUCTS
+========================= */
+
+@media (min-width: 1000px) {
+
+    .products-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+    .product-card h2 {
+        font-size: 18px;
+    }
+
+}
