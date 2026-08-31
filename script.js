@@ -85,7 +85,7 @@ function startChat() {
 
     // Message that will be opened in WhatsApp
     const whatsappMessage =
-        "Hello, My name is ____. I am interested in the cap on your website.\n\n" +
+        "Hello, My name is ____. I am interested in buying a cap on your website.\n\n" +
         message;
 
     // Create WhatsApp link

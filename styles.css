@@ -617,6 +617,72 @@ header::before {
     }
 }
 
+/***********BACK TO TOP************/
+/* =========================
+   BACK TO TOP BUTTON
+========================= */
+
+#backToTop {
+    position: fixed;
+    right: 20px;
+    bottom: 25px;
+    width: 55px;
+    height: 55px;
+    border: 5px solid var(--grey);
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: var(--background-color);
+    font-size: 30px;
+    cursor: pointer;
+
+    /* Hidden initially */
+    opacity: 0;
+    visibility: hidden;
+
+    /* Gentle appearance */
+    transform: translateY(15px);
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease,
+        visibility 0.4s ease;
+
+    z-index: 9999;
+}
+
+
+/* Show button after scrolling */
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+/* Slight effect when touched/hovered */
+
+#backToTop:hover {
+    transform: scale(1.08);
+}
+
+
+/* Mobile adjustment */
+
+@media (max-width: 600px) {
+
+    #backToTop , #backToTop i{
+        right: 15px;
+        bottom: 20px;
+
+        width: 55px;
+        height: 55px;
+
+        font-size: 28px;
+    }
+
+}
+
+
 /***********PRODUCT PICTURES************/
 img {
     max-width: 100%;

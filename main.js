@@ -84,3 +84,28 @@ instagramContent.forEach((item) => {
   duplicateNode.setAttribute("aria-hidden", true);
   instagram.appendChild(duplicateNode);
 });
+
+
+//BACK TO TOP BUTTON
+
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", function () {
+
+    if (window.scrollY > 300) {
+        backToTop.classList.add("show");
+    } else {
+        backToTop.classList.remove("show");
+    }
+
+});
+
+
+backToTop.addEventListener("click", function () {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
