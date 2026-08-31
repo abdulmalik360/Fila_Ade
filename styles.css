@@ -897,6 +897,9 @@ span {
     font-size: 4rem;
   }
 
+  header {
+     background-image: url("assets/header-2.jpg");
+  }
   .footer__container {
     grid-template-columns: repeat(2, 1fr);
   }
