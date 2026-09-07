@@ -85,6 +85,95 @@ instagramContent.forEach((item) => {
   instagram.appendChild(duplicateNode);
 });
 
+// IMAGE SLIDER SCRIPT
+const slider = document.querySelector('.slide-container');
+
+if (slider) {
+  const slides = slider.querySelectorAll('.slides img');
+  const nextButton = slider.querySelector('.next');
+  const prevButton = slider.querySelector('.prev');
+  const dots = slider.querySelectorAll('.dot');
+  let currentIndex = 0;
+  let autoSlideTimer;
+  let pointerStartX = null;
+
+  function updateIndicators() {
+    dots.forEach((dot, index) => {
+      const isCurrent = index === currentIndex;
+      dot.classList.toggle('active', isCurrent);
+      dot.setAttribute('aria-current', isCurrent ? 'true' : 'false');
+    });
+  }
+
+  function showSlide(nextIndex, direction = 'next') {
+    const previousIndex = currentIndex;
+    currentIndex = (nextIndex + slides.length) % slides.length;
+
+    slides[previousIndex].style.animation = `${direction}1 0.5s ease-in forwards`;
+    slides[currentIndex].style.animation = `${direction}2 0.5s ease-in forwards`;
+    slides[currentIndex].classList.add('active');
+    slides[previousIndex].classList.remove('active');
+    updateIndicators();
+  }
+
+  function slideNext() {
+    showSlide(currentIndex + 1, 'next');
+  }
+
+  function slidePrev() {
+    showSlide(currentIndex - 1, 'prev');
+  }
+
+  function restartAutoSliding() {
+    clearInterval(autoSlideTimer);
+    autoSlideTimer = setInterval(slideNext, 3000);
+  }
+
+  nextButton.addEventListener('click', () => {
+    slideNext();
+    restartAutoSliding();
+  });
+  prevButton.addEventListener('click', () => {
+    slidePrev();
+    restartAutoSliding();
+  });
+
+  dots.forEach((dot) => {
+    dot.addEventListener('click', () => {
+      const targetIndex = Number(dot.dataset.slide);
+      if (targetIndex !== currentIndex) {
+        showSlide(targetIndex, targetIndex > currentIndex ? 'next' : 'prev');
+      }
+      restartAutoSliding();
+    });
+  });
+
+  slider.addEventListener('pointerdown', (event) => {
+    pointerStartX = event.clientX;
+    slider.setPointerCapture(event.pointerId);
+  });
+
+  slider.addEventListener('pointerup', (event) => {
+    if (pointerStartX === null) return;
+    const swipeDistance = event.clientX - pointerStartX;
+    pointerStartX = null;
+    if (Math.abs(swipeDistance) < 50) return;
+
+    if (swipeDistance < 0) slideNext();
+    else slidePrev();
+    restartAutoSliding();
+  });
+
+  slider.addEventListener('pointercancel', () => {
+    pointerStartX = null;
+  });
+
+  slider.addEventListener('mouseenter', () => clearInterval(autoSlideTimer));
+  slider.addEventListener('mouseleave', restartAutoSliding);
+  updateIndicators();
+  restartAutoSliding();
+}
+
 
 //BACK TO TOP BUTTON
 
