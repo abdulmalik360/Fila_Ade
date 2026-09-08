@@ -757,7 +757,7 @@ header::before {
 
 #backToTop {
     position: fixed;
-    right: 20px;
+    right: 30px;
     bottom: 25px;
     width: 55px;
     height: 55px;
