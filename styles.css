@@ -757,8 +757,8 @@ header::before {
 
 #backToTop {
     position: fixed;
-    right: 30px;
-    bottom: 25px;
+    right: 35px;
+    bottom: 35px;
     width: 55px;
     height: 55px;
     border-radius: 50%;
